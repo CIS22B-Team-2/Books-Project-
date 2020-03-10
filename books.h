@@ -1,49 +1,42 @@
-#pragma once
+#include "date.h"
 #include <string>
-#include <iostream>
 
+using namespace std;
 
-// Books object
 class Book
 {
-private:
-	int ISBN;
-	std::string title; 
-	std::string publisher;
-	int year; 
-	int month;
-	int day; 
-	int quantity; 
-	double wholesale; 
-	double retail; 
-	std::string author; 
+private: //member variables
+	Date dateAdded;
+	string title;
+	string author;
+	string publisher;
+	string ISBN;
+	int quantity;
+	double wholesale;
+	double retail;
+	double MARKUP = 1;
 
-public: 
-	// Constructors
-	Book(); 
-	Book(int i, std::string t, std::string p, int y, int m, int d, int q, double w, double r, std::string a); // all params constructor
+public: //member functions
+	//Setters
+	Book();
+	void setTitle(string s);
+	void setAuthor(string a);
+	void setISBN(string isbn);
+	void setPublisher(string p);
+	void setWholesale(double whole);
+	void setRetail(double ret);
+	void setDate(int month, int day, int year);
+	void setDate(string date);
+	void setQuantity(int q);
 
-	// getters
-	int getISBN();
-	std::string getTitle();
-	std::string getPublisher();
-	int getYear();
-	int getMonth();
-	int getDay();
-	int getQuantity();
+	//Getters
+	string getTitle();
+	string getAuthor();
+	string getISBN();
+	string getPublisher();
 	double getWholesale();
 	double getRetail();
-	std::string getAuthor();
-
-	// setters 
-	void setISBN(int i);
-	void setTitle(std::string t);
-	void setPublisher(std::string p);
-	void setYear(int y);
-	void setMonth(int m);
-	void setDay(int d);
-	void setQuantity(int q);
-	void setWholesale(double w);
-	void setRetail(double r);
-	void setAuthor(std::string a);
+	void getDate();
+	int getQuantity();
+	void setDate(const Date &d);
 };
