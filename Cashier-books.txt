@@ -1,0 +1,400 @@
+The Catcher in the Rye
+978-0316769174
+J. D. Salinger
+Back Bay Books
+2001-01-30
+0
+7.30
+8.59
+Heart of Darkness
+978-1514713846
+Joseph Conrad
+CreateSpace Independent Publishing Platform
+2015-06-26
+94
+5.52
+6.49
+Romeo and Juliet
+978-1514697856
+William Shakespeare
+CreateSpace Independent Publishing Platform
+2015-06-25
+10
+5.94
+6.99
+The Invisible Man
+978-1512091977
+H.G. Wells
+CreateSpace Independent Publishing Platform
+2015-05-08
+83
+5.86
+6.89
+The Scarlet Letter
+978-1512090567
+Nathaniel Hawthorne
+CreateSpace Independent Publishing Platform
+2015-05-07
+90
+6.52
+7.67
+The Things They Carried
+978-0544309760
+Tim O'Brien
+Mariner Books
+2009-10-13
+26
+8.49
+9.99
+The Old Man and the Sea
+978-0684801223
+Ernest Hemingway
+Scribner
+1995-05-05
+1
+8.41
+9.89
+Pride and Prejudice
+978-1503290563
+Jane Austen
+CreateSpace Independent Publishing Platform
+2018-11-06
+71
+8.03
+9.45
+Hamlet
+978-1450539722
+William Shakespeare
+CreateSpace Independent Publishing Platform
+2010-01-19
+32
+6.76
+7.95
+Ethan Frome
+978-1512393798
+Edith Wharton
+CreateSpace Independent Publishing Platform
+2015-05-27
+3
+5.52
+6.49
+The Red Badge of Courage
+978-1508482765
+Stephen Crane
+CreateSpace Independent Publishing Platform
+2019-03-01
+47
+5.09
+5.99
+Death of a Salesman
+978-0140481341
+Arthur Miller
+Penguin Books
+1976-10-28
+6
+8.24
+9.69
+Equus
+978-0743287302
+Peter Shaffer
+Scribner
+2005-10-01
+52
+7.63
+8.98
+Voss
+978-0143105688
+Patrick White
+Penguin Classics
+2009-01-27
+91
+12.42
+14.61
+Animal Farm
+978-4871872690
+George Orwell
+Ishi Press
+2017-05-03
+33
+8.49
+9.99
+Never Let Me Go
+978-1400078776
+Kazuo Ishiguro
+Vintage
+2006-03-14
+85
+8.41
+9.89
+Slaughterhouse-Five
+978-0812988529
+Kurt Vonnegut
+Dial Press Trade Paperback
+1999-01-12
+27
+6.71
+7.89
+The House on Mango Street
+978-0679734772
+Sandra Cisneros
+Vintage
+1991-04-03
+98
+6.37
+7.49
+The Death of the Heart
+978-0385720175
+Elizabeth Bowen
+Anchor
+2000-05-09
+41
+10.87
+12.79
+The Odyssey
+978-0140268867
+Homer
+Penguin Classics
+1999-11-29
+19
+10.37
+12.20
+Nineteen Eighty-Four
+978-0679417392
+George Orwell
+Everyman's Library
+1992-11-03
+18
+13.59
+15.99
+Oedipus the King
+978-0195054934
+Sophocles
+Oxford University Press
+1988-03-31
+100
+7.36
+8.66
+Vanity Fair
+978-1420956719
+William Makepeace Thackeray
+
+2017-12-26
+84
+14.44
+16.99
+A Midsummer Night's Dream
+978-1512095708
+William Shakespeare
+CreateSpace Independent Publishing Platform
+2015-05-21
+89
+5.43
+6.39
+North and South
+978-1949982732
+Elizabeth Gaskell
+SDE Classics
+2018-12-27
+78
+11.04
+12.99
+Macbeth
+978-1514630587
+William Shakespeare
+CreateSpace Independent Publishing Platform
+2015-06-20
+58
+5.77
+6.79
+Of Mice and Men
+978-0140177398
+John Steinbeck
+Penguin Books
+1993-09-01
+8
+5.69
+6.69
+Night
+978-0374500016
+Elie Wiesel
+Hill and Wang
+2006-01-16
+56
+7.21
+8.48
+The Iliad
+978-8175993440
+Homer
+Fingerprint! Publishing
+2016-02-01
+28
+5.09
+5.99
+Quarantine
+978-0312199517
+Jim Crace
+Picador
+1999-03-15
+37
+11.30
+13.29
+Ulysses
+978-1505297546
+James Joyce
+CreateSpace Independent Publishing Platform
+2019-01-24
+61
+10.24
+12.05
+The Epic of Gilgamesh
+978-0393643985
+Benjamin R. Foster
+W. W. Norton & Company
+2019-02-14
+11
+13.93
+16.39
+The Great Gatsby
+978-0743273565
+F. Scott Fitzgerald
+Scribner
+2004-09-30
+43
+9.52
+11.20
+Lord of the Flies
+978-9381529614
+William Golding
+A & A Publishers
+2013-05-05
+41
+7.16
+8.42
+Fahrenheit 451
+978-1451673319
+Ray Bradbury
+Simon & Schuster
+2012-01-10
+41
+7.05
+8.29
+To Kill a Mockingbird
+978-0060935467
+Harper Lee
+Harper Perennial
+2005-07-05
+65
+6.11
+7.19
+Frankenstein
+978-1512308051
+Mary Shelley
+CreateSpace Independent Publishing Platform
+2017-11-25
+64
+6.21
+7.30
+Adventures of Huckleberry Finn
+978-0486280615
+Mark Twain
+Dover Publications
+1994-05-26
+51
+5.09
+5.99
+The Outsiders
+978-0142407332
+S. E. Hinton
+Speak
+2006-04-20
+46
+5.01
+5.89
+Great Expectations
+978-1512308846
+Charles Dickens
+CreateSpace Independent Publishing Platform
+2017-11-25
+17
+8.07
+9.49
+Othello
+978-1512317763
+William Shakespeare
+CreateSpace Independent Publishing Platform
+2015-05-23
+57
+5.44
+6.40
+A Tale of Two Cities
+978-1512314939
+Charles Dickens
+CreateSpace Independent Publishing Platform
+2015-05-23
+14
+8.35
+9.82
+The Crucible
+978-0142437339
+Arthur Miller
+Penguin Classics
+2003-03-25
+68
+6.71
+7.89
+A Separate Peace
+978-0743253970
+John Knowles
+Scribner
+2003-09-30
+$29.00
+9.34
+10.99
+Wuthering Heights
+978-1514664797
+Emily Bronte
+CreateSpace Independent Publishing Platform
+2015-06-23
+$100.00
+6.79
+7.99
+Crime and Punishment
+978-0486415871
+Fyodor Dostoyevsky
+Dover Publications
+2001-08-22
+$77.00
+5.94
+6.99
+The Tempest
+978-0393265422
+William Shakespeare
+W. W. Norton & Company
+2019-01-15
+$28.00
+15.94
+18.75
+Brave New World
+978-0375712364
+Aldous Huxley
+Everyman's Library
+2013-09-24
+$99.00
+14.44
+16.99
+The Grapes of Wrath
+978-0140247756
+John Steinbeck
+Penguin Books
+1997-07-01
+$97.00
+13.59
+15.99
+King Lear
+978-0743482769
+William Shakespeare
+Simon & Schuster
+2004-01-01
+$19.00
+5.09
+5.99
