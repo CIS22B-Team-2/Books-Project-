@@ -58,5 +58,5 @@ void reports()
 
 			std::cout << std::endl;
 
-	}//end while choice !=7
+	}
 }
