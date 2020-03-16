@@ -305,7 +305,7 @@ void getChoice(string &choice)
 
 
 
-// Functions - Stephen
+// Functions -Stephen
 //The function below sorts the books by quantity;
 // Largest quantity first;
 void sortBooksQuantity(Book arr[], int size) {
@@ -329,3 +329,35 @@ void sortBooksQuantity(Book arr[], int size) {
   listBooks(arr);
 
 };
+
+//This function sorts books by date ~ oldest first - Stephen
+void sortByDate(Book arr[], int size) {
+  /* TESTING Lists book before sorting
+   cout << "BEFORE" << endl;
+   listBooks(arr);
+   cout << "=======================" << endl;
+  */
+  //buble sort
+  int maxElement;
+  int index;
+
+  for (maxElement = size - 1; maxElement > 0; maxElement--) {
+    for (index = 0; index < maxElement; index++) {
+      if (arr[index].getYear() > arr[index + 1].getYear()) {
+        swap(arr[index], arr[index + 1]);
+      }
+    }
+  }
+  //second pass
+  for (maxElement = size - 1; maxElement > 0; maxElement--) {
+    for (index = 0; index < maxElement; index++) {
+      if (arr[index].getYear() == arr[index + 1].getYear() && arr[index].getMonth() > arr[index + 1].getMonth()) {
+        swap(arr[index], arr[index + 1]);
+      }
+    }
+  }
+  /* TESTING List books after sorting
+     cout << "AFTER" << endl;
+     listBooks(arr); 
+  */
+}
