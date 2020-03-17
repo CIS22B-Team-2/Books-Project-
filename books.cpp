@@ -3,7 +3,7 @@
 // Constructors
 Book::Book() // default constructor 
 {
-	ISBN = 0000000000;
+	ISBN = "0000000000";
 	title = "Default Book"; 
 	publisher = "Default Publisher";
 	int year = 0;
@@ -30,7 +30,7 @@ Book::Book(int i, std::string t, std::string p, int y, int m, int d, int q, doub
 }
 
 // getters
-int Book::getISBN() { return ISBN; }
+std::string Book::getISBN() { return ISBN; }
 std::string Book::getTitle() { return title; }
 std::string Book::getPublisher() { return publisher; }
 int Book::getYear() { return year; }
@@ -42,7 +42,7 @@ double Book::getRetail() { return retail; }
 std::string Book::getAuthor() { return author; }
 
 // setters 
-void Book::setISBN(int i) { ISBN = i; }
+void Book::setISBN(std::string i) { ISBN = i; }
 void Book::setTitle(std::string t) { title = t; }
 void Book::setPublisher(std::string p) { publisher = p;  }
 void Book::setYear(int y) { year = y; }
@@ -52,3 +52,16 @@ void Book::setQuantity(int q) { quantity = q;  }
 void Book::setWholesale(double w) { wholesale = w; }
 void Book::setRetail(double r) { retail = r;  }
 void Book::setAuthor(std::string a) { author = a;  }
+
+// functions
+void Book::displayABook()
+{
+	std::cout << "Entering Display A Book function....\n";
+	std::cout << "\nTitle: " << this->getTitle()
+		<< "\nAuthor: " << this->getAuthor()
+		<< "\nISBN: " << this->getISBN()
+		<< "\nWholesale Cost: " << this->getWholesale()
+		<< "\nRetail Cost: " << this->getRetail()
+		<< "\nDate Added to Inventory: " << this->getYear() << "/" << this->getMonth() << "/" << this->getDay(); 
+	std::cout << "\nQuantity: " << this->getQuantity();
+}

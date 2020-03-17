@@ -6,8 +6,8 @@
 // Books object
 class Book
 {
-private:
-	int ISBN;
+protected:
+	std::string ISBN;
 	std::string title; 
 	std::string publisher;
 	int year; 
@@ -24,7 +24,7 @@ public:
 	Book(int i, std::string t, std::string p, int y, int m, int d, int q, double w, double r, std::string a); // all params constructor
 
 	// getters
-	int getISBN();
+	std::string getISBN();
 	std::string getTitle();
 	std::string getPublisher();
 	int getYear();
@@ -36,7 +36,7 @@ public:
 	std::string getAuthor();
 
 	// setters 
-	void setISBN(int i);
+	void setISBN(std::string i);
 	void setTitle(std::string t);
 	void setPublisher(std::string p);
 	void setYear(int y);
@@ -46,4 +46,8 @@ public:
 	void setWholesale(double w);
 	void setRetail(double r);
 	void setAuthor(std::string a);
+
+	// Function 
+	void displayABook();
+
 };
