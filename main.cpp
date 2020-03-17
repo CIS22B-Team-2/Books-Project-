@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include "books.h"
-#include "Database.h"
+#include "database1.h"
 #include "Cashier.h"
 
 
@@ -11,8 +11,15 @@ using namespace std;
 
 // Function prototypes 
 void printMenu();
-void printCashierMenu();
 void getChoice(string &choice);
+void sortBytitle(Book b[], int size); 
+void sortByQuantity(Book* b, int size);
+void sortByRetail(Book b[], int size);
+void sortByWholesale(Book b[], int size);
+void sortByAuthor(Book b[], int size);
+void sortByISBN(Book b[], int size); 
+void sortByDate(Book arr[], int size); 
+
 
 int main()
 {
@@ -73,7 +80,8 @@ int main()
         size++; 
     }
 
-    /*int n = 0;
+    // Displaying every single book read in
+   /* int n = 0;
     while (n < i)
     {
         cout << "ISBN: " << bookList[n].getISBN() << endl
@@ -94,6 +102,7 @@ int main()
         printMenu();
         getChoice(choice);
         system("cls");
+        // Cashier module
         if (choice == "1")
         {
             int maxPurchase = 0;
@@ -242,6 +251,8 @@ int main()
             std::cout << std::endl;
             book[maxPurchase].displayTableBottom(finalTotal);
         }
+
+        // Inventory module
         if (choice == "2")
         {
             string choice = "";
@@ -446,10 +457,29 @@ int main()
                     }
                 }
 
-
+                // Delete a book
                 else if (choice == "4")
                 {
-                        
+                    cout << "What book do you want delete?";
+                    getline(cin, copyTitle); // INPUT VALIDATE
+                    int result = -1; 
+                    for (int i = 0; i < size; i++)
+                    {
+                        if (book[i].getTitle() == copyTitle)
+                            result = i; 
+                    }
+                    if (result != -1)
+                    {
+                    	for (int n = result; n < size - 1; n++)
+                    	{
+                    		book[n] = book[n + 1]; //Moves the entire list up by one.
+                    	}
+                        size--; 
+                    }
+                    else
+                    {
+                    	std::cout << "Book not found\n";
+                    }
                 }
 
                 else if (choice == "5")
@@ -460,20 +490,107 @@ int main()
             } while (flag1); 
         } 
 
+        // Report module
         if (choice == "3")
         {
-            /*bool flag3 = true; 
+            bool flag3 = true; 
             do
             {
+                string choice3; 
+                cout << "Entering Report Module" << endl; 
+                cout << "What would you like to report? Please select: " << endl; 
+                cout << "1. Inventory Listing" << endl
+                    << "2. Inventory by Wholesale Price" << endl
+                    << "3. Inventory by Retail Price" << endl
+                    << "4. Listing by Quantity" << endl
+                    << "5. Listing by Cost" << endl
+                    << "6. Listing by Age" << endl
+                    << "7. Return to Main Menu" << endl; 
 
+                getline(cin, choice3); // INPUT VALIDATE
+                
+                switch (stoi(choice3))
+                {
+                case 1:
+                {
+                    int total = 0; 
+                    cout << "Listing the entire inventory: " << endl; 
+                    for (int i = 0; i < size; i++)
+                    {
+                        cout << "Title: " << setw(75) << left << book[i].getTitle()
+                            << setw(15) << right << "Quantity: " << setw(5) << right << book[i].getQuantity() << endl;
+                        total += book[i].getQuantity();
+                    }
+                    cout << setw(82) << left << "TOTAL QUANTITY OF BOOKS: " << setw(20) << right << total << endl;
+                    break; 
+                }
+                case 2:
+                {
+                    double total = 0;
+                    cout << "Listing the entire inventory by wholesale price: " << endl;
+                    for (int i = 0; i < size; i++)
+                    {
+                        cout << "Title: " << setw(75) << left << book[i].getTitle()
+                            << setw(15) << right << "Wholesale Price: " << setw(8) << right << book[i].getWholesale() << endl;
+                        total = total + (book[i].getWholesale() * book[i].getQuantity());
+                    }
+                    cout << fixed << setprecision(2); 
+                    cout << setw(79) << left << "TOTAL WHOLESALE PRICE OF BOOKS: " << setw(20) << right << "$" << total << endl;
+                    break; 
+                }
+                case 3:
+                {
+                    double total = 0;
+                    cout << "Listing the entire inventory by retail price: " << endl;
+                    for (int i = 0; i < size; i++)
+                    {
+                        cout << "Title: " << setw(75) << left << book[i].getTitle()
+                            << setw(15) << right << "Retail Price: " << setw(8) << right << book[i].getRetail() << endl;
+                        total = total + (book[i].getRetail() * book[i].getQuantity());
+                    }
+                    cout << fixed << setprecision(2);
+                    cout << setw(77) << left << "TOTAL RETAIL PRICE OF BOOKS: " << setw(20) << right << "$" << total << endl;
+                    break;
+                }
+                case 4:
+                {
+                    int start;
+                    int minIndex = 0;
+                    Cashier minBook; 
+                    for (start = 0; start < (size - 1); start++)
+                    {
+                        minIndex = start;
+                        minBook = book[start];
+                        for (int index = start + 1; index < size; index++)
+                        {
+                            if (book[index].getQuantity() < minBook.getQuantity())
+                            {
+                                minBook = book[index];
+                                minIndex = index;
+                            }
+                        }
+                        book[minIndex] = (book[start]);
+                        book[start] = (minBook);
+                    }
+                    int total = 0;
+                    cout << "Listing the entire inventory: " << endl;
+                    for (int i = 0; i < size; i++)
+                    {
+                        cout << "Title: " << setw(75) << left << book[i].getTitle()
+                            << setw(15) << right << "Quantity: " << setw(5) << right << book[i].getQuantity() << endl;
+                        total += book[i].getQuantity();
+                    }
+                    cout << setw(82) << left << "TOTAL QUANTITY OF BOOKS: " << setw(20) << right << total << endl;
+                    break;
+                }
+                case 5:
+                case 6:
+                case 7:
+                    cout << "Hi" << endl; 
+                    break; 
+                }
 
-
-
-
-
-
-
-            } while (flag3 == true);*/
+            } while (flag3 == true);
         }
         
         if (choice == "4")
@@ -494,15 +611,7 @@ void printMenu()
     cout << "2. Inventory Database Module " << endl;
     cout << "3. Report Module " << endl;
     cout << "4. Exit " << endl;
-}
-
-void printCashierMenu()
-{
-    cout << "Please enter the ISBN of the book you are purchasing, with a space followed by the quantity of that book." << endl;
-    cout << "For example, if the ISBN is 9781305616691 and you are purchasing 3 of the same copies, enter: " << endl;
-    cout << "9781305616691 3" << endl;
-}
-
+}   
 
 void getChoice(string &choice)
 {
@@ -515,4 +624,200 @@ void getChoice(string &choice)
         else
             cout << "Please enter a valid chocie" << endl; 
     } while (flag);
+}
+
+void sortBytitle(Book b[], int size)
+{
+    int start, minIndex;
+    Book minBook; 
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getTitle() < minBook.getTitle())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByQuantity(Book *b, int size)
+{
+    int start, minIndex = 0;
+    Book minBook;
+
+    int n = 0;
+    while (n < size)
+    {
+        cout << "ISBN: " << b[n].getISBN() << endl
+            << "Title: " << b[n].getTitle() << endl
+            << "Publisher: " << b[n].getPublisher() << endl
+            << "Year: " << b[n].getYear() << endl
+            << "Month: " << b[n].getMonth() << endl
+            << "Day: " << b[n].getDay() << endl
+            << "Quantity: " << b[n].getQuantity() << endl
+            << "Wholesale: " << b[n].getWholesale() << endl
+            << "Retail: " << b[n].getRetail() << endl
+            << "Author: " << b[n].getAuthor() << endl;
+        n++;
+    }
+
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getQuantity() < minBook.getQuantity())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByRetail(Book b[], int size)
+{
+    int start, minIndex;
+    Book minBook;
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getRetail() < minBook.getRetail())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByWholesale(Book b[], int size)
+{
+    int start, minIndex;
+    Book minBook;
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getWholesale() < minBook.getWholesale())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByAuthor(Book b[], int size)
+{
+    int start, minIndex;
+    Book minBook;
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getAuthor() < minBook.getAuthor())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByISBN(Book b[], int size)
+{
+    int start, minIndex;
+    Book minBook;
+    for (start = 0; start < (size - 1); start++)
+    {
+        minIndex = start;
+        minBook = b[start];
+        for (int index = start + 1; index < size; index++)
+        {
+            if (b[index].getISBN() < minBook.getISBN())
+            {
+                minBook = b[index];
+                minIndex = index;
+            }
+        }
+        b[minIndex] = (b[start]);
+        b[start] = (minBook);
+    }
+}
+
+void sortByDate(Book arr[], int size) 
+{
+    // TESTING Lists book before sorting
+     cout << "BEFORE" << endl;
+     for (int i = 0; i < size; i++)
+     {
+         cout << "ISBN: " << arr[i].getISBN() << endl
+             << "Title: " << arr[i].getTitle() << endl
+             << "Publisher: " << arr[i].getPublisher() << endl
+             << "Year: " << arr[i].getYear() << endl
+             << "Month: " << arr[i].getMonth() << endl
+             << "Day: " << arr[i].getDay() << endl
+             << "Quantity: " << arr[i].getQuantity() << endl
+             << "Wholesale: " << arr[i].getWholesale() << endl
+             << "Retail: " << arr[i].getRetail() << endl
+             << "Author: " << arr[i].getAuthor() << endl;
+     }
+     cout << "=======================" << endl;
+    
+
+    //buble sort
+    int maxElement;
+    int index;
+
+    for (maxElement = size - 1; maxElement > 0; maxElement--) 
+    {
+        for (index = 0; index < maxElement; index++) 
+        {
+            if (arr[index].getYear() * 10000 + arr[index].getMonth() * 100 + arr[index].getDay() > 
+                arr[index+1].getYear() * 10000 + arr[index+1].getMonth() * 100 + arr[index+1].getDay()) 
+            {
+                swap(arr[index], arr[index + 1]);
+            }
+        }
+    }   
+
+    // TESTING List books after sorting
+       cout << "AFTER" << endl;
+       for (int i = 0; i < size; i++)
+       {
+           cout << "ISBN: " << arr[i].getISBN() << endl
+               << "Title: " << arr[i].getTitle() << endl
+               << "Publisher: " << arr[i].getPublisher() << endl
+               << "Year: " << arr[i].getYear() << endl
+               << "Month: " << arr[i].getMonth() << endl
+               << "Day: " << arr[i].getDay() << endl
+               << "Quantity: " << arr[i].getQuantity() << endl
+               << "Wholesale: " << arr[i].getWholesale() << endl
+               << "Retail: " << arr[i].getRetail() << endl
+               << "Author: " << arr[i].getAuthor() << endl;
+       }
 }
