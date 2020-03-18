@@ -8,8 +8,8 @@ class Cashier : public Book
 {
 private:
     const double tax = 0.10;
-    double subTotal;
-    double finalTotal;
+    double subTotal = 0;
+    double finalTotal = 0;
 
 public:
     // Constructor

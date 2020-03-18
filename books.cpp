@@ -56,12 +56,25 @@ void Book::setAuthor(std::string a) { author = a;  }
 // functions
 void Book::displayABook()
 {
-	std::cout << "Entering Display A Book function....\n";
 	std::cout << "\nTitle: " << this->getTitle()
 		<< "\nAuthor: " << this->getAuthor()
 		<< "\nISBN: " << this->getISBN()
 		<< "\nWholesale Cost: " << this->getWholesale()
 		<< "\nRetail Cost: " << this->getRetail()
 		<< "\nDate Added to Inventory: " << this->getYear() << "/" << this->getMonth() << "/" << this->getDay(); 
-	std::cout << "\nQuantity: " << this->getQuantity();
+	std::cout << "\nQuantity: " << this->getQuantity() << std::endl; 
+}
+
+void Book::operator=(const Book& b)
+{
+	this->ISBN = b.ISBN;
+	this->title = b.title;
+	this->author = b.author;
+	this->publisher = b.publisher;
+	this->year = b.year;
+	this->month = b.month;
+	this->day = b.day;
+	this->quantity = b.quantity;
+	this->wholesale = b.wholesale;
+	this->retail = b.retail;
 }

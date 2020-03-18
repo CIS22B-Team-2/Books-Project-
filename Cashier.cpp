@@ -110,3 +110,8 @@ void Cashier::operator=(const Cashier& c)
     this->subTotal = Cashier::calcSubTotal();
     this->finalTotal += subTotal;
 }
+
+
+
+
+

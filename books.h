@@ -49,5 +49,5 @@ public:
 
 	// Function 
 	void displayABook();
-
+	virtual void operator=(const Book& b); 
 };

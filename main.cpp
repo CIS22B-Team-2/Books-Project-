@@ -5,7 +5,6 @@
 #include "books.h"
 #include "Cashier.h"
 
-
 using namespace std;
 
 // Function prototypes 
@@ -71,7 +70,11 @@ int main()
         i++;
         size++; 
     }
-  
+    inFile.close(); 
+
+    ofstream outfile;
+    outfile.open("Books.txt");
+
     do 
     {    
         system("cls"); 
@@ -362,12 +365,11 @@ int main()
                         }
                         if (flag2 == false)
                         {
-                            cout << "This book is already in the database, pleaes go to 'Edit a book's Record.'" << endl;
+                            cout << "This book is already in the database, please go to 'Edit a book's Record.'" << endl;
                         }
                         
                         else if (flag2 == true)
                         {
-                            size++;
                             book[size].setTitle(copyTitle);
 
                             try
@@ -395,6 +397,7 @@ int main()
                                 book[size].setYear(2020);
                                 book[size].setMonth(3);
                                 book[size].setDay(19);
+                                size++; 
 
                                 cout << "Would you like to add another book? Please enter Y or N" << endl;
                                 do
@@ -623,7 +626,7 @@ int main()
                         total = total + (book[i].getRetail() * book[i].getQuantity());
                     }
                     cout << fixed << setprecision(2);
-                    cout << setw(77) << left << "TOTAL RETAIL PRICE OF BOOKS: " << setw(20) << right << "$" << total << endl;
+                    cout << setw(84) << left << "TOTAL RETAIL PRICE OF BOOKS: " << setw(21) << right << total << endl;
                     cout << "Press enter to return to the reporting module." << endl;
                     cin.get();
                     break;
@@ -690,7 +693,7 @@ int main()
                         total = total + (book[i].getWholesale() * book[i].getQuantity());
                     }
                     cout << fixed << setprecision(2);
-                    cout << setw(79) << left << "TOTAL WHOLESALE PRICE OF BOOKS: " << setw(20) << right << "$" << total << endl;
+                    cout << setw(72) << left << "TOTAL WHOLESALE PRICE OF BOOKS: " << setw(20) << right << "" << setw(15) << right << total << endl;
                     cout << "Press enter to return to the reporting module." << endl;
                     cin.get();
                     break;
@@ -741,9 +744,27 @@ int main()
         if (choice == "4")
         {
             cout << "Thank you using the Book Store Program!" << endl;
-            return 0; 
+            flag = false; 
         }
     } while (flag);
+
+    // Update the file 
+
+    for (int i = 0; i < size; i++)
+    {
+
+        outfile << book[i].getISBN() << endl; 
+        outfile << book[i].getTitle() << endl;
+        outfile << book[i].getPublisher() << endl;
+        outfile << book[i].getYear() << endl;
+        outfile << book[i].getMonth() << endl;
+        outfile << book[i].getDay() << endl;
+        outfile << book[i].getQuantity() << endl;
+        outfile << book[i].getWholesale() << endl;
+        outfile << book[i].getRetail() << endl;
+        outfile << book[i].getAuthor() << endl;
+    }
+    outfile.close();
 
     return 0;
 }
@@ -775,3 +796,6 @@ void printLine()
 {
     cout << "================================================================================" << endl; 
 }
+
+
+
