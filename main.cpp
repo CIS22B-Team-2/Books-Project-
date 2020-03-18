@@ -767,7 +767,7 @@ void getChoice(string &choice)
         if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
             flag = false;
         else
-            cout << "Please enter a valid chocie" << endl; 
+            cout << "Please enter a valid choice" << endl; 
     } while (flag);
 }
 
